@@ -10,7 +10,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto w-full px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <GraduationCap className="w-8 h-8 text-blue-900" />
             <span className="font-semibold text-xl text-slate-900">AlumniConnect</span>
@@ -27,60 +27,60 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl mb-6 text-slate-900">
-            Digital Platform for Centralized Alumni Data Management and Engagement
+      <section className="max-w-7xl mx-auto px-6 py-20 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="font-poppins font-semibold text-4xl md:text-5xl mb-6 text-slate-900 leading-tight">
+            Digital platform for centralized alumni data management and engagement
           </h1>
-          <p className="text-xl text-slate-600 mb-4">
-            SIH25017 - Connecting Students, Alumni, and Institutions
+          <p className="text-lg text-slate-600 mb-4">
+            SIH25017 — connecting students, alumni, and institutions
           </p>
-          <p className="text-lg text-slate-500 mb-10 max-w-2xl mx-auto">
-            A comprehensive platform for managing alumni data, facilitating mentorship, 
+          <p className="text-base text-slate-500 mb-10 max-w-2xl mx-auto">
+            A comprehensive platform for managing alumni data, facilitating mentorship,
             analyzing career progression, and fostering meaningful connections.
           </p>
         </div>
 
         {/* Role Selection Cards */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-16">
-          <Card className="p-8 hover:shadow-xl transition-all cursor-pointer border-2 hover:border-blue-900 group" 
-                onClick={() => navigate('/student/dashboard')}>
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-900 transition-colors">
-              <GraduationCap className="w-8 h-8 text-blue-900 group-hover:text-white transition-colors" />
+              <Card className="p-8 hover:shadow-xl transition-transform transform hover:-translate-y-1 cursor-pointer rounded-xl" 
+                onClick={() => navigate(`/login?role=student&redirect=${encodeURIComponent('/student/dashboard')}`)}>
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <GraduationCap className="w-8 h-8 text-blue-700" />
             </div>
             <h3 className="text-2xl mb-3 text-slate-900">Student</h3>
             <p className="text-slate-600 mb-6">
               Connect with alumni mentors, get career guidance, and improve your resume
             </p>
-            <Button className="w-full bg-blue-900 hover:bg-blue-800">
+            <Button className="w-full bg-gradient-to-r from-[#0b5fff] to-[#06b6d4] text-white hover:opacity-95">
               Access Student Portal
             </Button>
           </Card>
 
-          <Card className="p-8 hover:shadow-xl transition-all cursor-pointer border-2 hover:border-teal-600 group" 
-                onClick={() => navigate('/alumni/dashboard')}>
-            <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-teal-600 transition-colors">
-              <Users className="w-8 h-8 text-teal-600 group-hover:text-white transition-colors" />
+              <Card className="p-8 hover:shadow-xl transition-transform transform hover:-translate-y-1 cursor-pointer rounded-xl" 
+                onClick={() => navigate(`/login?role=alumni&redirect=${encodeURIComponent('/alumni/dashboard')}`)}>
+            <div className="w-16 h-16 bg-gradient-to-br from-teal-50 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Users className="w-8 h-8 text-teal-600" />
             </div>
             <h3 className="text-2xl mb-3 text-slate-900">Alumni</h3>
             <p className="text-slate-600 mb-6">
               Give back to your alma mater, mentor students, and stay connected with your network
             </p>
-            <Button className="w-full bg-teal-600 hover:bg-teal-700">
+            <Button className="w-full bg-gradient-to-r from-[#06b6d4] to-[#0ea5a4] text-white hover:opacity-95">
               Access Alumni Portal
             </Button>
           </Card>
 
-          <Card className="p-8 hover:shadow-xl transition-all cursor-pointer border-2 hover:border-green-600 group" 
-                onClick={() => navigate('/management/dashboard')}>
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600 transition-colors">
-              <Building2 className="w-8 h-8 text-green-600 group-hover:text-white transition-colors" />
+              <Card className="p-8 hover:shadow-xl transition-transform transform hover:-translate-y-1 cursor-pointer rounded-xl" 
+                onClick={() => navigate(`/login?role=management&redirect=${encodeURIComponent('/management/dashboard')}`)}>
+            <div className="w-16 h-16 bg-gradient-to-br from-green-50 to-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Building2 className="w-8 h-8 text-green-600" />
             </div>
             <h3 className="text-2xl mb-3 text-slate-900">College Management</h3>
             <p className="text-slate-600 mb-6">
               Track alumni engagement, generate reports, and manage institutional data
             </p>
-            <Button className="w-full bg-green-600 hover:bg-green-700">
+            <Button className="w-full bg-gradient-to-r from-[#10b981] to-[#059669] text-white hover:opacity-95">
               Access Management Portal
             </Button>
           </Card>

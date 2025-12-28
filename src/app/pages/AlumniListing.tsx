@@ -12,64 +12,64 @@ export default function AlumniListing() {
   
   const alumni = [
     {
-      name: 'Dr. Sarah Johnson',
+      name: 'Ram Gupta',
       role: 'Senior ML Engineer',
-      company: 'Google',
-      location: 'San Francisco, CA',
+      company: 'TechSolutions Pvt Ltd',
+      location: 'Hyderabad',
       graduation: '2015',
       department: 'Computer Science',
       expertise: ['Machine Learning', 'AI', 'Python'],
-      image: 'SJ'
+      image: 'RG'
     },
     {
-      name: 'Michael Chen',
+      name: 'Rakesh Sharma',
       role: 'Product Manager',
-      company: 'Microsoft',
-      location: 'Seattle, WA',
+      company: 'Innovatech',
+      location: 'Bangalore',
       graduation: '2016',
       department: 'Computer Science',
       expertise: ['Product Strategy', 'UX Design', 'Agile'],
-      image: 'MC'
+      image: 'RS'
     },
     {
       name: 'Priya Patel',
       role: 'Full Stack Developer',
-      company: 'Amazon',
-      location: 'New York, NY',
+      company: 'Amazon India',
+      location: 'Bangalore',
       graduation: '2017',
       department: 'Computer Science',
       expertise: ['React', 'Node.js', 'AWS'],
       image: 'PP'
     },
     {
-      name: 'Rajesh Kumar',
+      name: 'Amit Sharma',
       role: 'Data Scientist',
-      company: 'Meta',
-      location: 'Menlo Park, CA',
+      company: 'DataWorks',
+      location: 'Chennai',
       graduation: '2014',
       department: 'Computer Science',
       expertise: ['Data Analysis', 'Statistics', 'R'],
-      image: 'RK'
+      image: 'AS'
     },
     {
-      name: 'Emily Williams',
+      name: 'Navin Reddy',
       role: 'UX Designer',
-      company: 'Apple',
-      location: 'Cupertino, CA',
+      company: 'DesignHub',
+      location: 'Hyderabad',
       graduation: '2018',
       department: 'Design',
       expertise: ['UI/UX', 'Figma', 'User Research'],
-      image: 'EW'
+      image: 'NR'
     },
     {
-      name: 'Amit Sharma',
+      name: 'Neha Singh',
       role: 'Cloud Architect',
-      company: 'IBM',
-      location: 'Austin, TX',
+      company: 'CloudServe',
+      location: 'Noida',
       graduation: '2013',
       department: 'Computer Science',
       expertise: ['Cloud', 'DevOps', 'Kubernetes'],
-      image: 'AS'
+      image: 'NS'
     },
   ];
 

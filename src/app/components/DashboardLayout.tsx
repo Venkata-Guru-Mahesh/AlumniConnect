@@ -85,11 +85,20 @@ export default function DashboardLayout({ children, role, userName = "User" }: D
     }
   };
 
+  const handleLogout = () => {
+    try {
+      localStorage.removeItem('authToken');
+    } catch (e) {
+      // ignore
+    }
+    navigate('/login');
+  };
+
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Top Navigation */}
       <header className="bg-white border-b sticky top-0 z-40">
-        <div className="flex items-center justify-between px-4 py-3">
+        <div className="max-w-7xl mx-auto w-full px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Button 
               variant="ghost" 
@@ -101,7 +110,7 @@ export default function DashboardLayout({ children, role, userName = "User" }: D
             </Button>
             
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
-              <GraduationCap className={`w-7 h-7 text-${role === 'student' ? 'blue-900' : role === 'alumni' ? 'teal-600' : 'green-600'}`} />
+              <GraduationCap className="w-7 h-7 text-slate-900" />
               <span className="font-semibold text-lg text-slate-900 hidden sm:block">AlumniConnect</span>
             </div>
           </div>
@@ -152,37 +161,54 @@ export default function DashboardLayout({ children, role, userName = "User" }: D
           fixed lg:sticky top-[57px] left-0 z-30 w-64 h-[calc(100vh-57px)] bg-white border-r transform transition-transform duration-300 ease-in-out
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
         `}>
-          <nav className="p-4 space-y-1 h-full overflow-y-auto">
-            {navItems.map((item) => (
+          <div className="flex flex-col h-full">
+            <nav className="p-4 space-y-1 flex-1 overflow-y-auto">
+              {navItems.map((item) => (
+                <button
+                  key={item.path}
+                  onClick={() => {
+                    navigate(item.path);
+                    setSidebarOpen(false);
+                  }}
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+                >
+                  {item.icon}
+                  <span>{item.label}</span>
+                </button>
+              ))}
+
               <button
-                key={item.path}
                 onClick={() => {
-                  navigate(item.path);
+                  navigate('/settings');
                   setSidebarOpen(false);
                 }}
-                className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+                className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors mt-4"
               >
-                {item.icon}
-                <span>{item.label}</span>
+                <Settings className="w-5 h-5" />
+                <span>Settings</span>
               </button>
-            ))}
+            </nav>
 
-            <button
-              onClick={() => {
-                navigate('/settings');
-                setSidebarOpen(false);
-              }}
-              className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors mt-4"
-            >
-              <Settings className="w-5 h-5" />
-              <span>Settings</span>
-            </button>
-          </nav>
+            <div className="p-4 border-t">
+              <button
+                onClick={() => {
+                  handleLogout();
+                  setSidebarOpen(false);
+                }}
+                className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-red-600 hover:bg-red-50 transition-colors"
+              >
+                <LogOut className="w-5 h-5" />
+                <span className="font-medium">Logout</span>
+              </button>
+            </div>
+          </div>
         </aside>
 
         {/* Main Content */}
         <main className="flex-1 p-6 lg:p-8">
-          {children}
+          <div className="max-w-7xl mx-auto">
+            {children}
+          </div>
         </main>
       </div>
 

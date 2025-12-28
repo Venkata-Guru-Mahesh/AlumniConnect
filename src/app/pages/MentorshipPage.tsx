@@ -7,19 +7,19 @@ import { UserCircle, Star, CheckCircle2, Clock, XCircle } from 'lucide-react';
 
 export default function MentorshipPage() {
   const recommendedMentors = [
-    { name: 'Dr. Sarah Johnson', role: 'Senior ML Engineer', company: 'Google', match: 95, availability: 'Available' },
-    { name: 'Michael Chen', role: 'Product Manager', company: 'Microsoft', match: 88, availability: 'Limited' },
-    { name: 'Priya Patel', role: 'Full Stack Developer', company: 'Amazon', match: 82, availability: 'Available' },
+    { name: 'Dr. Seema Nair', role: 'Senior ML Engineer', company: 'TechSolutions Pvt Ltd', match: 95, availability: 'Available' },
+    { name: 'Manish Mehta', role: 'Product Manager', company: 'Innovatech', match: 88, availability: 'Limited' },
+    { name: 'Priya Patel', role: 'Full Stack Developer', company: 'Amazon India', match: 82, availability: 'Available' },
   ];
 
   const activeMentorships = [
-    { mentor: 'Dr. Sarah Johnson', started: 'Dec 1, 2024', sessions: 3, nextSession: 'Jan 5, 2025' },
+    { mentor: 'Dr. Seema Nair', started: 'Dec 1, 2024', sessions: 3, nextSession: 'Jan 5, 2025' },
     { mentor: 'Amit Sharma', started: 'Nov 15, 2024', sessions: 5, nextSession: 'Jan 3, 2025' },
   ];
 
   const pendingRequests = [
-    { mentor: 'Emily Williams', requestedOn: 'Dec 20, 2024', status: 'pending' },
-    { mentor: 'Rajesh Kumar', requestedOn: 'Dec 22, 2024', status: 'pending' },
+    { mentor: 'Kavya Iyer', requestedOn: 'Dec 20, 2024', status: 'pending' },
+    { mentor: 'Rakesh Kumar', requestedOn: 'Dec 22, 2024', status: 'pending' },
   ];
 
   return (

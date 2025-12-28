@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { GraduationCap, Mail, Lock } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -9,11 +9,26 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 
 export default function LoginPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [role, setRole] = useState<string>('student');
+  const [redirectTo, setRedirectTo] = useState<string | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const r = params.get('role');
+    const redirect = params.get('redirect');
+    if (r) setRole(r);
+    if (redirect) setRedirectTo(redirect);
+  }, [location.search]);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Navigate based on selected role
+    // After successful login, navigate to redirect param if present, otherwise go by role
+    if (redirectTo) {
+      navigate(redirectTo);
+      return;
+    }
+
     if (role === 'student') {
       navigate('/student/dashboard');
     } else if (role === 'alumni') {

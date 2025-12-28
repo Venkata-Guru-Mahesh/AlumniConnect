@@ -38,7 +38,7 @@ export default function SideNav({ role }: SideNavProps) {
   const links = role === 'student' ? studentLinks : role === 'alumni' ? alumniLinks : managementLinks;
 
   return (
-    <div className="w-64 bg-white h-full overflow-y-auto">
+    <div className="w-64 bg-white h-full overflow-y-auto border-r border-transparent shadow-sm">
       <nav className="p-4 space-y-1">
         {links.map((link) => {
           const isActive = location.pathname === link.path;
@@ -47,13 +47,15 @@ export default function SideNav({ role }: SideNavProps) {
               key={link.path}
               to={link.path}
               className={cn(
-                'flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200',
+                'flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-150',
                 isActive
-                  ? 'bg-gradient-to-r from-[#1e3a8a] to-[#0891b2] text-white shadow-lg'
-                  : 'text-gray-700 hover:bg-gray-100'
+                  ? 'bg-gradient-to-r from-[#0b5fff] to-[#06b6d4] text-white shadow-sm'
+                  : 'text-slate-700 hover:bg-slate-50'
               )}
             >
-              <link.icon className={cn('w-5 h-5', isActive ? 'text-white' : 'text-gray-500')} />
+              <div className={cn('w-8 h-8 flex items-center justify-center rounded-md', isActive ? 'bg-white/10' : 'text-slate-500')}> 
+                <link.icon className={cn('w-5 h-5', isActive ? 'text-white' : 'text-slate-500')} />
+              </div>
               <span className="font-medium">{link.label}</span>
             </Link>
           );

@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { Badge } from '../components/ui/badge';
 import { Progress } from '../components/ui/progress';
+import ChatbotWidget from '../components/ChatbotWidget';
 
 export default function StudentDashboard() {
   const navigate = useNavigate();
@@ -26,9 +27,9 @@ export default function StudentDashboard() {
   ];
 
   const recommendedMentors = [
-    { name: 'Dr. Sarah Johnson', role: 'Senior ML Engineer', company: 'Google', expertise: 'Machine Learning, AI', matchScore: 95 },
-    { name: 'Michael Chen', role: 'Product Manager', company: 'Microsoft', expertise: 'Product Strategy, UX', matchScore: 88 },
-    { name: 'Priya Patel', role: 'Full Stack Developer', company: 'Amazon', expertise: 'Web Development, Cloud', matchScore: 82 },
+    { name: 'Dr. Seema Nair', role: 'Senior ML Engineer', company: 'TechSolutions Pvt Ltd', expertise: 'Machine Learning, AI', matchScore: 95 },
+    { name: 'Manish Mehta', role: 'Product Manager', company: 'Innovatech', expertise: 'Product Strategy, UX', matchScore: 88 },
+    { name: 'Priya Patel', role: 'Full Stack Developer', company: 'Amazon India', expertise: 'Web Development, Cloud', matchScore: 82 },
   ];
 
   const upcomingEvents = [
@@ -231,6 +232,7 @@ export default function StudentDashboard() {
             </div>
           </div>
         </Card>
+        <ChatbotWidget />
       </div>
     </DashboardLayout>
   );
